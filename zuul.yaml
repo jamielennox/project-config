@@ -1,0 +1,21 @@
+- pipeline:
+    name: gerrithub_check
+    manager: independent
+    source:
+      gerrithub
+    trigger:
+      gerrit:
+        - event: patchset-created
+        - event: comment-added
+          comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
+    success:
+      gerrit:
+        verified: 1
+    failure:
+      gerrit:
+        verified: -1
+
+- project:
+    name: jamielennox/sandbox
+    gerrithub_check:
+      jobs: []
