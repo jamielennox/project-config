@@ -4,15 +4,15 @@
     source:
       gerrithub
     trigger:
-      gerrit:
+      gerrithub:
         - event: patchset-created
         - event: comment-added
           comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
     success:
-      gerrit:
+      gerrithub:
         verified: 1
     failure:
-      gerrit:
+      gerrithub:
         verified: -1
 
 - project:
