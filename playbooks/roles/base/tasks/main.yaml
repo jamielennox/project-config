@@ -1,2 +1,2 @@
 ---
-include: "{{ base_stage | mandatory }}.yaml"
+- include: "{{ base_stage | mandatory }}.yaml"
