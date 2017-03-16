@@ -16,10 +16,14 @@
         verified: -1
 
 - job:
-    name: bonnyci
+    name: base
     pre-run: base-pre
     post-run: base-post
     timeout: 1800
+
+- job:
+    name: bonnyci
+    parent: base
     nodes:
       - name: bonnyci
         image: ubuntu-xenial

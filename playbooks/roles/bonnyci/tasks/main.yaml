@@ -10,4 +10,4 @@
 
 - command: "{{ bonnyci_exec_dest }}"
   args:
-    chdir: "/home/zuul/workspace/src/{{ zuul.project }}"
+    chdir: "/home/bonnyci/workspace/src/{{ zuul.project }}"
