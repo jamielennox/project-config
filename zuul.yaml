@@ -17,6 +17,9 @@
 
 - job:
     name: bonnyci
+    nodes:
+      - name: bonnyci
+        image: ubuntu-xenial
 
 - project:
     name: jamielennox/sandbox
