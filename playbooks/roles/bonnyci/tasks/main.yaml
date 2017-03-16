@@ -1,0 +1,13 @@
+---
+- debug:
+    var: hostvars
+
+- become: yes
+  copy:
+    src: run-bonnyci.sh
+    dest: "{{ bonnyci_exec_dest }}"
+    mode: "0755"
+
+- command: "{{ bonnyci_exec_dest }}"
+  args:
+    chdir: "/home/zuul/workspace/src/{{ zuul.project }}"
