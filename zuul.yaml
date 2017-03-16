@@ -15,6 +15,9 @@
       gerrithub:
         verified: -1
 
+- job:
+    name: bonnyci
+
 - project:
     name: jamielennox/sandbox
     gerrithub_check:
