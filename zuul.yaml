@@ -17,6 +17,9 @@
 
 - job:
     name: bonnyci
+    pre-run: base-pre
+    post-run: base-post
+    timeout: 1800
     nodes:
       - name: bonnyci
         image: ubuntu-xenial
