@@ -9,8 +9,7 @@ elif [[ ! -x .bonnyci/run.sh ]]; then
 fi
 
 export BONNYCI_TEST_PIPELINE={pipeline}
-export BONNYCI_TEST_LOG_DIR="$(pwd)/logs"
-mkdir -p $BONNYCI_TEST_LOG_DIR
+export BONNYCI_TEST_LOG_DIR="{{ bonnyci_logs_dir }}"
 
 if ./.bonnyci/run.sh; then
     echo ".bonnyci/run.sh test(s) passed :)"

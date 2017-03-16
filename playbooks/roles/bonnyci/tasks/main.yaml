@@ -3,11 +3,11 @@
     var: hostvars
 
 - become: yes
-  copy:
+  template:
     src: run-bonnyci.sh
     dest: "{{ bonnyci_exec_dest }}"
     mode: "0755"
 
 - command: "{{ bonnyci_exec_dest }}"
   args:
-    chdir: "/home/bonnyci/workspace/src/{{ zuul.project }}"
+    chdir: "{{ bonnyci_workspace_root }}/src/{{ zuul.project }}"

@@ -1,0 +1,11 @@
+- name: Collect console log.
+  synchronize:
+    dest: "{{ zuul.executor.log_root }}"
+    mode: pull
+    src: "{{ base_console_log_file }}"
+
+- name: Publish logs.
+  copy:
+    dest: "{{ base_log_root }}"
+    src: "{{ zuul.executor.log_root }}/"
+  delegate_to: 127.0.0.1

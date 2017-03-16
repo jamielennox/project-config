@@ -1,0 +1,24 @@
+- name: Ensure console.log does not exist.
+  file:
+    path: "{{ base_console_log_file }}"
+    state: absent
+
+- name: Start zuul_console daemon.
+  zuul_console:
+    path: "{{ base_console_log_file }}"
+    port: "{{ base_console_log_port }}"
+
+- name: Create workspace and logging directories.
+  file:
+    path: "{{ item }}"
+    owner: "{{ base_user }}"
+    group: "{{ base_group }}"
+    state: directory
+  with_items:
+    - "{{ base_workspace_root }}"
+    - "{{ base_log_root }}"
+
+- name: Synchronize src repos to workspace directory.
+  synchronize:
+    dest: "{{ base_workspace_root }}"
+    src: "{{ zuul.executor.src_root }}"

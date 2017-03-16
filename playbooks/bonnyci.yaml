@@ -1,3 +1,5 @@
 - hosts: bonnyci
   roles:
-    - bonnyci
+    - name: bonnyci
+      bonnyci_logs_dir: /home/bonnyci/logs
+      bonnyci_workspace_root: /home/bonnyci/workspace
