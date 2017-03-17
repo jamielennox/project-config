@@ -8,3 +8,9 @@
       src: "{{ base_console_log_file }}"
     - dest: logs
       src: "{{ base_log_root }}"
+
+- name: publish logs.
+  synchronize:
+    src: "{{ zuul.executor.log_root }}"
+    dest: "{{ bonnyci.logs_dest | mandatory }}/{{ zuul.uuid }}"
+    mode: push
