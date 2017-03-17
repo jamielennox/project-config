@@ -1,8 +1,8 @@
 - name: Collect logs.
   synchronize:
-    dest: "{{ zuul.executor.log_root }}/{{ dest }}"
+    dest: "{{ zuul.executor.log_root }}/{{ item.dest }}"
+    src: "{{ item.src }}"
     mode: pull
-    src: "{{ base_console_log_file }}"
   with_items:
     - dest: "console.log"
       src: "{{ base_console_log_file }}"
