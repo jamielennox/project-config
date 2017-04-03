@@ -29,6 +29,6 @@
         image: ubuntu-xenial
 
 - project:
-    name: jamielennox/sandbox
+    name: BonnyCI/sandbox-v3
     gerrithub_check:
       jobs: []
