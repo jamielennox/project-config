@@ -16,4 +16,4 @@
     --compress --recursive
     --rsh ssh
     {{ zuul.executor.log_root }}/
-    192.168.2.59:/var/www/bonny-logs/logs/{{ zuul.uuid }}/
+    192.168.2.59:/var/www/bonny-logs/logs/{{ zuul.pipeline }}/{{ zuul.project }}/{{ zuul.change }}/{{ zuul.uuid }}/
