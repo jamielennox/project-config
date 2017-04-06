@@ -13,7 +13,7 @@
   delegate_to: localhost
   command: >
     /usr/bin/rsync
-    {{ bonnyci.logs.rsync_options | default('--compress --recursive') }}
-    --rsh '{{ bonnyci.logs.rsync_ssh | default("ssh") }}'
+    --compress --recursive
+    --rsh ssh
     {{ zuul.executor.log_root }}/
-    {{ bonnyci.logs.dest | mandatory }}/{{ zuul.uuid }}/
+    192.168.2.59:/var/www/bonny-logs/logs/{{ zuul.uuid }}/
