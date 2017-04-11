@@ -1,4 +1,4 @@
 bonnyci_exec_dest: /opt/run-bonnyci.sh
 
-bonnyci_logs_dir: "{{ ansible_env['HOME'] }}/logs"
-bonnyci_workspace_root: "{{ ansible_env['HOME'] }}/workspace"
+bonnyci_logs_dir: "/home/zuul/logs"
+bonnyci_workspace_root: "/home/zuul/workspace"
