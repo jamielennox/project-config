@@ -1,8 +1,5 @@
 base_console_log_file: /tmp/console.log
 base_console_log_port: 19885
 
-base_user: bonnyci
-base_group: bonnyci
-
-base_workspace_root: "/home/{{ base_user }}/workspace"
-base_log_root: "/home/{{ base_user }}/logs"
+base_log_root: "{{ ansible_user_dir }}/logs"
+base_workspace_root: "{{ ansible_user_dir }}/workspace"

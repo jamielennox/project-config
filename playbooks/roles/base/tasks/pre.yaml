@@ -11,8 +11,7 @@
 - name: Create workspace and logging directories.
   file:
     path: "{{ item }}"
-    owner: "{{ base_user }}"
-    group: "{{ base_group }}"
+    owner: "{{ ansible_user_id }}"
     state: directory
   with_items:
     - "{{ base_workspace_root }}"
