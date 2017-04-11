@@ -1,5 +1,5 @@
 base_console_log_file: /tmp/console.log
 base_console_log_port: 19885
 
-base_log_root: "{{ ansible_user_dir }}/logs"
-base_workspace_root: "{{ ansible_user_dir }}/workspace"
+base_log_root: "{{ ansible_env['HOME'] }}/logs"
+base_workspace_root: "{{ ansible_env['HOME'] }}/workspace"
