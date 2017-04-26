@@ -2,8 +2,6 @@
     name: gerrithub_check
     manager: independent
     allow-secrets: True
-    source:
-      gerrithub
     trigger:
       gerrithub:
         - event: patchset-created
