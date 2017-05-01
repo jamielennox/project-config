@@ -7,12 +7,30 @@
         - event: patchset-created
         - event: comment-added
           comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
+      github:
+        - event:
+            - pr-open
+            - pr-change
+            - pr-reopen
+        - event: pr-comment
+          comment: (?i)^\s*recheck\s*$
+    start:
+      github:
+        status: true
     success:
       gerrithub:
         verified: 1
+      github:
+        status: true
+        status_url: &log_link "{{ zuul_logs_url }}/{pipeline.name}/{change.project.name}/{change.number}/{item.enqueue_time}/"
+        comment: false
     failure:
       gerrithub:
         verified: -1
+      github:
+        status: true
+        status_url: *log_link
+        comment: true
 
 - job:
     name: base
