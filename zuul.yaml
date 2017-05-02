@@ -8,11 +8,13 @@
         - event: comment-added
           comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
       github:
-        - event:
-            - pr-open
-            - pr-change
-            - pr-reopen
-        - event: pr-comment
+        - event: pull_request
+          action:
+            - opened
+            - changed
+            - reopened
+        - event: pull_request
+          action: comment
           comment: (?i)^\s*recheck\s*$
     start:
       github:
