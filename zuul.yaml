@@ -16,20 +16,18 @@
           comment: (?i)^\s*recheck\s*$
     start:
       github:
-        status: true
+        status: pending
     success:
       gerrithub:
         verified: 1
       github:
-        status: true
-        status_url: &log_link "{{ zuul_logs_url }}/{pipeline.name}/{change.project.name}/{change.number}/{item.enqueue_time}/"
+        status: success
         comment: false
     failure:
       gerrithub:
         verified: -1
       github:
-        status: true
-        status_url: *log_link
+        status: failure
         comment: true
 
 - job:
