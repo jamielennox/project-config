@@ -7,6 +7,18 @@
         - event: patchset-created
         - event: comment-added
           comment: (?i)^(Patch Set [0-9]+:)?( [\w\\+-]*)*(\n\n)?\s*(recheck|reverify)
+    success:
+      gerrithub:
+        verified: 1
+    failure:
+      gerrithub:
+        verified: -1
+
+- pipeline:
+    name: github_check
+    manager: independent
+    allow-secrets: True
+    trigger:
       github:
         - event: pull_request
           action:
@@ -20,14 +32,10 @@
       github:
         status: pending
     success:
-      gerrithub:
-        verified: 1
       github:
         status: success
         comment: false
     failure:
-      gerrithub:
-        verified: -1
       github:
         status: failure
         comment: true
