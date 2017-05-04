@@ -10,5 +10,5 @@
 
 - command: "{{ bonnyci_exec_dest }}"
   args:
-    chdir: "{{ bonnyci_workspace_root }}/src/{{ zuul.project }}"
+    chdir: "{{ bonnyci_workspace_root }}/src/{{ zuul.project.canonical_name }}"
   environment: "{{ bonnyci_environment }}"
