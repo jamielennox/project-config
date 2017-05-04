@@ -19,6 +19,7 @@
     start:
       github:
         status: pending
+        comment: false
     success:
       gerrithub:
         verified: 1
