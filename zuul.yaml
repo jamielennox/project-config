@@ -37,6 +37,7 @@
     name: base
     pre-run: base-pre
     post-run: base-post
+    success-url: https://logs.bonnyci.org/{pipeline.name}/{change.project.name}/{change.number}/{change.patchset}/
     timeout: 1800
 
 - job:
