@@ -50,3 +50,6 @@
     name: BonnyCI/sandbox-v3
     gerrithub_check:
       jobs: []
+
+- project:
+    name: github.com/BonnyCI/requests-mock
