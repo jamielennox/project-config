@@ -26,12 +26,14 @@
       github:
         status: success
         comment: false
+        status_url: &log_link "https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{change.patchset}/"
     failure:
       gerrithub:
         verified: -1
       github:
         status: failure
         comment: true
+        status_url: *log_link
 
 - job:
     name: base
