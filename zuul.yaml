@@ -39,7 +39,7 @@
     name: base
     pre-run: base-pre
     post-run: base-post
-    success-url: https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/
+    success-url: https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/{job.name}
     timeout: 1800
 
 - job:
