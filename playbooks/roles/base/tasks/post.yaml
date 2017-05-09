@@ -12,7 +12,7 @@
 - name: publish logs.
   delegate_to: localhost
   command: >
-    /usr/bin/rsync
+    /usr/bin/rsync -q
     --compress --recursive
     --rsh ssh
     --rsync-path 'mkdir -p /var/www/bonny-logs/logs/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.uuid }} && rsync'
