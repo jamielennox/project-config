@@ -26,7 +26,7 @@
       github:
         status: success
         comment: false
-        status_url: &log_link "https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{change.patchset}/"
+        status_url: &log_link "https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/"
     failure:
       gerrithub:
         verified: -1
@@ -39,7 +39,7 @@
     name: base
     pre-run: base-pre
     post-run: base-post
-    success-url: https://logs.bonnyci.org/{pipeline.name}/{change.project.name}/{change.number}/{change.patchset}/
+    success-url: https://logs.bonnyci.org/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.ref}/
     timeout: 1800
 
 - job:
