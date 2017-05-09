@@ -22,3 +22,5 @@
   synchronize:
     dest: "{{ base_workspace_root }}"
     src: "{{ zuul.executor.src_root }}"
+    rsync_opts:
+      - "--quiet"
