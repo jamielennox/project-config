@@ -1,5 +1,5 @@
 - pipeline:
-    name: gerrithub_check
+    name: check
     manager: independent
     allow-secrets: True
     trigger:
@@ -48,11 +48,3 @@
     nodes:
       - name: bonnyci
         image: ubuntu-xenial
-
-- project:
-    name: BonnyCI/sandbox-v3
-    gerrithub_check:
-      jobs: []
-
-- project:
-    name: github.com/BonnyCI/requests-mock
