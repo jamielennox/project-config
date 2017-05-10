@@ -15,6 +15,6 @@
     /usr/bin/rsync -q
     --compress --recursive
     --rsh ssh
-    --rsync-path 'mkdir -p /var/www/bonny-logs/logs/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.ref }}/{{ zuul.job }} && rsync'
+    --rsync-path 'mkdir -p /var/www/bonny-logs/logs/{{ zuul.tenant }}/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.ref }}/{{ zuul.job }} && rsync'
     {{ zuul.executor.log_root }}/
-    logs.internal.opentechsjc.bonnyci.org:/var/www/bonny-logs/logs/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.ref }}/{{ zuul.job }}/
+    logs.internal.opentechsjc.bonnyci.org:/var/www/bonny-logs/logs/{{ zuul.tenant }}/{{ zuul.pipeline }}/{{ zuul.project.canonical_name }}/{{ zuul.change }}/{{ zuul.ref }}/{{ zuul.job }}/
