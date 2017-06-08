@@ -54,9 +54,10 @@
           action: dismissed
           state: request_changes
     require:
-      status: "bonnyci[bot]:check:success"
-      approval:
-        - review: 2
+      github:
+        status: "bonnyci[bot]:check:success"
+        approval:
+          - review: 2
     start:
       github:
         status: pending
