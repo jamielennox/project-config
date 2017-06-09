@@ -55,9 +55,10 @@
           state: request_changes
     require:
       github:
-        status: "bonnyci[bot]:check:success"
-        approval:
-          - review: 2
+        status:
+          - "bonnyci[bot]:check:success"
+        review:
+          - permission: write
     start:
       github:
         status: pending
