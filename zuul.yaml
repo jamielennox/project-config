@@ -87,4 +87,4 @@
     parent: base
     nodes:
       - name: bonnyci
-        image: ubuntu-xenial
+        label: ubuntu-xenial
