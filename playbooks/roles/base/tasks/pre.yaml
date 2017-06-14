@@ -1,11 +1,5 @@
-- name: Ensure console.log does not exist.
-  file:
-    path: "{{ base_console_log_file }}"
-    state: absent
-
 - name: Start zuul_console daemon.
   zuul_console:
-    path: "{{ base_console_log_file }}"
     port: "{{ base_console_log_port }}"
 
 - name: Create workspace and logging directories.

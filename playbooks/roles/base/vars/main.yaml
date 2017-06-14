@@ -1,4 +1,3 @@
-base_console_log_file: /tmp/console.log
 base_console_log_port: 19885
 
 base_log_root: "/home/zuul/logs"
