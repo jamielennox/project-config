@@ -7,11 +7,9 @@
     - dest: logs
       src: "{{ base_log_root }}"
 
-# FIXME(jamielennox): switch back to command after command+delegate_to:
-# localhost work together correctly with zuul streaming.
 - name: publish logs.
   delegate_to: localhost
-  shell: >
+  command: >
     /usr/bin/rsync -q
     --compress --recursive
     --rsh ssh
