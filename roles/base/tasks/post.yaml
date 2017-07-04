@@ -8,6 +8,7 @@
       src: "{{ base_log_root }}"
 
 - name: publish logs.
+  become: no
   delegate_to: localhost
   command: >
     /usr/bin/rsync -vvv
