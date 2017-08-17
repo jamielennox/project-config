@@ -1,7 +1,7 @@
 - pipeline:
     name: check
     manager: independent
-    allow-secrets: True
+    post-review: True
     trigger:
       gerrithub:
         - event: patchset-created
@@ -38,7 +38,7 @@
 - pipeline:
     name: gate
     manager: dependent
-    allow-secrets: True
+    post-review: True
     trigger:
       github:
         - event: pull_request
