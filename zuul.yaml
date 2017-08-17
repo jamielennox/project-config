@@ -77,6 +77,7 @@
 
 - job:
     name: base
+    parent: null
     pre-run: base-pre
     post-run: base-post
     success-url: https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
