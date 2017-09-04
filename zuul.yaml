@@ -78,10 +78,21 @@
 - job:
     name: base
     parent: null
+    description: |
+      The base job that all BonnyCI jobs will ultimately inherit from.
+
+      This base job is responsible for setting up the test nodes with the
+      source repositories and copying any completed logs to the log server. It
+      will also set some sensible defaults that can be overridden in other
+      jobs.
     pre-run: base-pre
     post-run: base-post
+    roles:
+      - zuul: openstack-infra/zuul-jobs
     success-url: https://logs.bonnyci.org/{tenant.name}/{pipeline.name}/{change.project.canonical_name}/{change.number}/{buildset.uuid}/{job.name}
     timeout: 1800
+    secrets:
+      - bonnyci_log_ssh
 
 - job:
     name: bonnyci
@@ -91,8 +102,10 @@
         label: ubuntu-xenial
 
 - secret:
-    name: bonnyci-log-ssh
+    name: bonnyci_log_ssh
     data:
+      fqdn: logs.internal.opentech.bonnyci.org
+      ssh_username: zuul
       ssh_known_hosts: |
         logs.opentech.bonnyci.org ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCgCFYYM9ue5xE17faGs/NwpLg8kgdI6PIa1XHsPZp3Sx/f/GNYSRUgwH94HQJiRRkZpxK640ESWCezOdTOkQbaIoUy4R+x5W/GlCzc+ZWFh18KkbSQgWkZeNoYDRmlykzLUwV5t82Absv14HHPRlwMn0rAjhIw2HnxIhxOptGI5dr4djluqT3lehTYoQeEgtjmRege9/4a9PJxz0be52kG3uu2v0XCEBCyvUTQgO6uw5LvclSfFeQbBz1B0XzrU6Z4RC1zSjXdTEeLJ6MZPz9V94Pq319B5DDdVCNKJKDNSjwks3GKgzA7UxcShs60TqzOIwMZAFPgoeGEyAaI3lGT
       ssh_private_key: !encrypted/pkcs1-oaep
