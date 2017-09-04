@@ -1,3 +1,9 @@
+---
+- hosts: localhost
+  roles:
+    - name: add-fileserver
+      fileserver: "{{ bonnyci_log_ssh }}"
+
 - hosts: all
   roles:
     - name: base
